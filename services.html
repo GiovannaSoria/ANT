@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - HVQ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        :root {
+            --primary: #73123F;
+            --secondary: #A61C5C;
+            --accent: #D9B4C5;
+        }
+
+        body {
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 15px rgba(115, 18, 63, 0.2);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .brand-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .services-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(115, 18, 63, 0.1);
+        }
+
+        .services-content h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(115, 18, 63, 0.05), rgba(166, 28, 92, 0.05));
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .services-section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">HVQ</div>
+            <span class="brand-name">HVQ</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="services-section">
+        <div class="services-content">
+            <h1>Educación en Ciberseguridad</h1>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3>Protección Personal</h3>
+                    <p>Aprende a proteger tu información personal y dispositivos de amenazas cibernéticas comunes. Incluye gestión de contraseñas seguras y autenticación de dos factores.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Seguridad en Redes</h3>
+                    <p>Conoce los riesgos de las redes públicas y cómo navegar de forma segura. Aprende sobre VPNs, firewalls y protección de datos en línea.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Seguridad Móvil</h3>
+                    <p>Protege tus dispositivos móviles de malware y ataques. Aprende sobre actualizaciones de seguridad, aplicaciones seguras y protección de datos móviles.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>Formación Básica</h3>
+                    <p>Curso fundamental de ciberseguridad para principiantes. Aprende conceptos básicos, mejores prácticas y cómo mantenerte seguro en línea.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚠️</div>
+                    <h3>Identificación de Amenazas</h3>
+                    <p>Aprende a reconocer y evitar estafas en línea, phishing y otros tipos de ataques cibernéticos comunes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>Buenas Prácticas</h3>
+                    <p>Implementa hábitos seguros en tu vida digital. Incluye respaldo de datos, actualizaciones de software y gestión de privacidad.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: var(--secondary); font-size: 1.2rem; line-height: 1.6;">
+                    En la era digital actual, la ciberseguridad es fundamental para proteger tu información personal y profesional. 
+                    Nuestros cursos te proporcionan las herramientas necesarias para navegar de forma segura en el mundo digital.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 

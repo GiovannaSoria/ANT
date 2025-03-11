@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Phishing - ANT</title>
+    <div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .phishing-example {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #003B73;
+            color: white;
+            padding: 20px;
+            position: relative;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 350px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .header-title {
+            color: #a5a5a5;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .header-date {
+            color: white;
+            font-size: 1.5em;
+            margin-top: auto;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .warning-box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #73123F;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .details {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f8f8;
+            border-radius: 5px;
+        }
+
+        .details p {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .action-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #003366;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .alternative-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .registro-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f8f8;
+            border-radius: 5px;
+        }
+
+        .registro-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        /* Overlay educativo */
+        .educational-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(115, 18, 63, 0.95);
+            color: white;
+            padding: 40px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            text-align: center;
+        }
+
+        .educational-overlay h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .educational-overlay p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 10px auto;
+            line-height: 1.6;
+        }
+
+        .close-overlay {
+            background: white;
+            color: #73123F;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+ 
+
+    <div class="phishing-example">
+        <div class="header">
+            <div class="logo-container">
+                <img src="./ant.png" alt="Logo ANT" class="logo">
+               
+            </div>
+            <div>
+               <p>Quito, Marzo 2025</p> 
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Estimado/a usuario/a</h2>
+            <p style="margin: 20px 0;">
+                La Agencia Nacional de Tránsito le notifica que se ha registrado una infracción de tránsito conforme al artículo Art. 389 - Lit. 05.
+            </p>
+
+            <div class="details">
+                <p>Como beneficio especial, puede acceder a un descuento del 75% si realiza el pago dentro de las próximas 24 horas.</p>
+            </div>
+
+            <a href="#" class="action-button" onclick="showEducationalOverlay(); return false;">
+                Ver Infracción
+            </a>
+
+            <div class="registro-info">
+                <p><strong>Número de registro:</strong>QUI202400315789</p>
+                <p><strong>Descripción:</strong> Av. 10 de Agosto y Villalengua - No uso de cinturón de seguridad</p>
+                <p style="margin-top: 20px; font-size: 0.9em; color: #666;">
+                    Enlace alternativo: <a href="index.html" class="alternative-link" onclick="showEducationalOverlay(); return false;">http://www.ant-gob.ec.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="educational-overlay" id="educationalOverlay">
+        <h2>🚨 ¡Esto es un ejemplo de Phishing!</h2>
+        <p>Esta página es una demostración de cómo los estafadores intentan engañar a las personas.</p>
+        <p>Señales de alerta que debes identificar:</p>
+        <p>✖️ URLs sospechosas y diferentes al sitio oficial</p>
+        <p>✖️ Urgencia en el mensaje ("24 horas", "descuento especial")</p>
+        <p>✖️ Solicitud de información personal o pagos inmediatos</p>
+        <p>✖️ Errores gramaticales o de formato</p>
+        <button class="close-overlay" onclick="hideEducationalOverlay()">Entendido</button>
+    </div>
+
+    <script>
+        function showEducationalOverlay() {
+            document.getElementById('educationalOverlay').style.display = 'flex';
+            return false;
+        }
+
+        function hideEducationalOverlay() {
+            document.getElementById('educationalOverlay').style.display = 'none';
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 500);
+        }
+    </script>
+    </div>
+</body>
+</html> 
