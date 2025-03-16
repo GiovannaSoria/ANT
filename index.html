@@ -8,59 +8,26 @@
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
-        
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
         // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
-    apiKey: "AIzaSyC6w_eEIZLq9bz9-jHqb54RrBH8AN9NGas",
-    authDomain: "hola-6967b.firebaseapp.com",
-    projectId: "hola-6967b",
-    storageBucket: "hola-6967b.firebasestorage.app",
-    messagingSenderId: "644059817521",
-    appId: "1:644059817521:web:7b6c5e52caf15371bd9710",
-    measurementId: "G-VD24W7LVW9"
-  };
-        
+          apiKey: "AIzaSyC6w_eEIZLq9bz9-jHqb54RrBH8AN9NGas",
+          authDomain: "hola-6967b.firebaseapp.com",
+          projectId: "hola-6967b",
+          storageBucket: "hola-6967b.firebasestorage.app",
+          messagingSenderId: "644059817521",
+          appId: "1:644059817521:web:7b6c5e52caf15371bd9710",
+          measurementId: "G-VD24W7LVW9"
+        };
+      
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        
-        // Función para obtener parámetros de la URL
-        function getParameterByName(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name);
-        }
-        
-        // Función para guardar registro de visita en Firebase
-        async function saveVisitLog() {
-            try {
-                // Obtener el correo de la URL
-                const email = getParameterByName('email') || 'desconocido';
-                
-                // Información adicional sobre el visitante
-                const userAgent = navigator.userAgent;
-                const referrer = document.referrer;
-                const timestamp = new Date().toISOString();
-                
-                // Guardar en Firestore
-                const docRef = await addDoc(collection(db, "visitas"), {
-                    email: email,
-                    userAgent: userAgent,
-                    referrer: referrer,
-                    timestamp: serverTimestamp(),
-                    fechaHora: timestamp,
-                    ip: "" // La IP se capturará en el servidor
-                });
-                
-                console.log("Visita registrada con ID: ", docRef.id);
-            } catch (error) {
-                console.error("Error al guardar visita: ", error);
-            }
-        }
-        
-        // Ejecutar cuando la página se cargue completamente
-        document.addEventListener('DOMContentLoaded', saveVisitLog);
-    </script>
+        const analytics = getAnalytics(app);
+      </script>
     <style>
         * {
             margin: 0;
@@ -214,10 +181,9 @@
             <span class="brand-name">HVQ</span>
         </div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html">Inicio</a>
+            <a href="about.html">Información</a>
+            <a href="services.html">Aprende más</a>
         </nav>
     </header>
 
@@ -235,9 +201,13 @@
     <script>
         // Función para mostrar información del visitante
         function showVisitorInfo() {
-            const email = new URLSearchParams(window.location.search).get('email');
+            const params = new URLSearchParams(window.location.search);
+            const email = params.get('email');
+            
             if (email && email !== 'desconocido') {
-                document.getElementById('email-info').textContent = `Correo detectado: ${email}`;
+                // Decodificar el email en caso de que venga codificado
+                const decodedEmail = decodeURIComponent(email);
+                document.getElementById('email-info').textContent = `Correo detectado: ${decodedEmail}`;
                 document.getElementById('visitor-info').style.display = 'block';
             }
         }
