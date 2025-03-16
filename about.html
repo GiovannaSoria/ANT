@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - HVQ</title>
+    <title>Información - HVQ</title>
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
     <meta name="theme-color" content="#73123F">
@@ -86,118 +86,66 @@
             color: var(--primary);
         }
 
-        .about-section {
+        .info-section {
             padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .about-hero {
+        .section-title {
             text-align: center;
-            margin-bottom: 4rem;
-            padding: 3rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 15px;
-            color: white;
-            position: relative;
-            overflow: hidden;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
         }
 
-        .about-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .about-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .about-hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .about-content {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(115, 18, 63, 0.1);
-        }
-
-        .about-grid {
+        .cards-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            padding: 1rem;
         }
 
-        .about-card {
-            background: linear-gradient(135deg, rgba(115, 18, 63, 0.05), rgba(166, 28, 92, 0.05));
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .about-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(115, 18, 63, 0.1);
-        }
-
-        .about-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .about-card p {
-            color: var(--secondary);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .about-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .stats-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-            padding: 2rem;
+        .card {
             background: white;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(115, 18, 63, 0.1);
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem;
+        .card:hover {
+            transform: translateY(-5px);
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
+        .card-icon {
+            font-size: 3rem;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
         }
 
-        .stat-label {
-            color: var(--secondary);
-            font-size: 1.1rem;
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .card ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+            color: #666;
+        }
+
+        .card li {
+            margin-bottom: 0.5rem;
         }
 
         @media (max-width: 768px) {
@@ -212,21 +160,12 @@
                 justify-content: center;
             }
 
-            .about-section {
-                padding: 2rem 1rem;
+            .section-title {
+                font-size: 2rem;
             }
 
-            .about-hero {
-                padding: 2rem 1rem;
-            }
-
-            .about-hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .stats-section {
+            .cards-container {
                 grid-template-columns: 1fr;
-                gap: 1rem;
             }
         }
     </style>
@@ -243,52 +182,69 @@
             <a href="index.html">Inicio</a>
             <a href="about.html">Información</a>
             <a href="services.html">Aprende más</a>
-            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-    <section class="about-section">
-        <div class="about-hero">
-            <h1>Protegiendo Tu Mundo Digital</h1>
-            <p>Somos expertos en ciberseguridad comprometidos con la educación y protección de usuarios en el entorno digital.</p>
-        </div>
-
-        <div class="about-content">
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="about-icon">🎯</div>
-                    <h3>Nuestra Misión</h3>
-                    <p>Empoderar a las personas con conocimientos y herramientas para navegar de forma segura en el mundo digital, protegiendo su información y privacidad.</p>
-                </div>
-                <div class="about-card">
-                    <div class="about-icon">🌟</div>
-                    <h3>Nuestra Visión</h3>
-                    <p>Crear un entorno digital más seguro a través de la educación y concientización en ciberseguridad, llegando a cada vez más personas.</p>
-                </div>
-                <div class="about-card">
-                    <div class="about-icon">💎</div>
-                    <h3>Nuestros Valores</h3>
-                    <p>Integridad, excelencia, innovación y compromiso con la seguridad digital de nuestros usuarios.</p>
-                </div>
+    <section class="info-section">
+        <h2 class="section-title">Seguridad Cibernética</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-icon">🎣</div>
+                <h3>¿Qué es el Phishing?</h3>
+                <p>
+                    El phishing es una técnica de ciberataque donde los estafadores se hacen pasar por entidades legítimas 
+                    (bancos, instituciones gubernamentales, empresas conocidas) para engañar a las personas y obtener 
+                    información sensible como:
+                </p>
+                <ul>
+                    <li>Contraseñas</li>
+                    <li>Números de tarjetas de crédito</li>
+                    <li>Datos bancarios</li>
+                    <li>Información personal</li>
+                </ul>
+                <p style="margin-top: 1rem">
+                    Los atacantes suelen usar correos electrónicos, mensajes de texto o sitios web falsos que imitan 
+                    perfectamente a los originales para ganar tu confianza.
+                </p>
             </div>
 
-            <div class="stats-section">
-                <div class="stat-item">
-                    <div class="stat-number">5000+</div>
-                    <div class="stat-label">Usuarios Protegidos</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100+</div>
-                    <div class="stat-label">Cursos Impartidos</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Satisfacción</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Soporte Disponible</div>
-                </div>
+            <div class="card">
+                <div class="card-icon">⚠️</div>
+                <h3>Ataques Cibernéticos</h3>
+                <p>
+                    Un ataque cibernético es cualquier intento malicioso de obtener acceso no autorizado a sistemas, 
+                    redes o datos personales. Estos ataques pueden tomar muchas formas:
+                </p>
+                <ul>
+                    <li>Malware y virus</li>
+                    <li>Ransomware (secuestro de datos)</li>
+                    <li>Ingeniería social</li>
+                    <li>Ataques de fuerza bruta</li>
+                    <li>Suplantación de identidad</li>
+                </ul>
+                <p style="margin-top: 1rem">
+                    Los ciberdelincuentes están constantemente desarrollando nuevas técnicas para vulnerar la seguridad 
+                    de personas y organizaciones.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <h3>¿Por qué es importante protegerse?</h3>
+                <p>
+                    La protección contra ataques cibernéticos es crucial en la era digital por varias razones:
+                </p>
+                <ul>
+                    <li>Protección de datos personales y financieros</li>
+                    <li>Prevención de robo de identidad</li>
+                    <li>Seguridad de información sensible</li>
+                    <li>Prevención de pérdidas económicas</li>
+                </ul>
+                <p style="margin-top: 1rem">
+                    Mantenerse informado y adoptar buenas prácticas de seguridad es la mejor defensa contra los 
+                    ciberataques. Recuerda: si algo parece demasiado bueno para ser verdad o genera urgencia 
+                    innecesaria, probablemente sea un intento de estafa.
+                </p>
             </div>
         </div>
     </section>
